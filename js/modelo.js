@@ -15,5 +15,5 @@ const Modelo =  async(busqueda,pagina) => {
 		
 	}
 }
-// Linea de ajemplo del Modelo 
+// Linea de ejemplo del Modelo 
 //Modelo('house',3).then( r=>console.log(r)).catch(e=> console.log(e))
