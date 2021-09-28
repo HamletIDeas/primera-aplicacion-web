@@ -10,6 +10,10 @@ const Vista = () =>{
 	crearIMG = (hit)=>{
 		let img = new Image() // <img>
 		img.src  = hit.largeImageURL
+		let ancho =  (230 * hit.imageHeight)/ hit.imageWidth
+		img.setAttribute('width',230)
+		img.setAttribute('height',ancho)
+		console.log(hit);
 		return img
 	}
 
@@ -43,7 +47,16 @@ const Vista = () =>{
 			cont.appendChild(a)
 		}
 		)
+		// Agremos el contenedor
 		section.appendChild(cont)
+		// Usamos la libreria para usar Masonry
+		var msnry = new Masonry( cont, {
+			// options
+			itemSelector: 'img',
+			columnWidth: 230,
+			gutter:20,
+			isFitWidth:true
+		})
 
 	}
 	_eScroll = (eventos)=>{
@@ -81,9 +94,13 @@ const Vista = () =>{
 		let divs = document.querySelectorAll('.contenedor')
 		// Y si existe uno o mas
 		if(divs.length > 0){
+			//Selecionamos el scroll
+			let scroll = document.querySelector('.scroll');
+			//Removemos el scroll
+			body.removeChild(scroll)
 			// Borralos
 			for(let i = 0; i < divs.length; i++ )
-				section.removeChild(divs[i])
+				section.removeChild(divs[i])	
 		}
 		publico.busqueda = palabra
 		publico.pagina = 1

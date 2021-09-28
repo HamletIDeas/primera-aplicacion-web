@@ -43,20 +43,13 @@
 		<img class="grid-item" src="https://picsum.photos/230/320.jpg" width="230" height="320" />
 		<img class="grid-item" src="https://picsum.photos/230/260.jpg" width="230" height="260" />
 	</section>
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 	<script>
 		var elem = document.querySelector('section');
 		imagesLoaded( elem, () => {
-		var msnry = new Masonry( elem, {
-  			// options
- 	 		itemSelector: 'img',
-  			columnWidth: 230,
-	  		gutter:20,
-	  		isFitWidth:true
-	  	});});
+		;});
 	</script> -->
 	<!--Adelanto-->
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script src="js/modelo.js"></script>
 	<script src="js/vista.js"></script>
 	<script src="js/controlador.js"></script>
